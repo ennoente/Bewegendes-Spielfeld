@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
     public static int startOfObstaclesX = 550;
     public static int endOfMovementForFigure = 300;
     public static double coinSpawnProx = 0.4;
+    public static float gameSpeed = 2f;
 
     //public static int[] gapFinished = new int[5];
     public static int[] coinInGap = new int[5];
@@ -331,11 +332,11 @@ public class MainActivity extends Activity {
                         figure.setX(figure.getX() + 1);
                         for(int i = 0; i < obstaclesUp.length; i++)
                         {
-                            coin[i].setX(coin[i].getX() - 4.5f);
+                            coin[i].setX(coin[i].getX() - 4.5f * gameSpeed);
 
-                            obstaclesUp[i].setX(obstaclesUp[i].getX() - 4.5f);
-                            obstaclesDown[i].setX(obstaclesDown[i].getX() - 4.5f);
-                            obstaclesUp_2[i].setX(obstaclesUp_2[i].getX() - 4.5f);
+                            obstaclesUp[i].setX(obstaclesUp[i].getX() - 4.5f * gameSpeed);
+                            obstaclesDown[i].setX(obstaclesDown[i].getX() - 4.5f * gameSpeed);
+                            obstaclesUp_2[i].setX(obstaclesUp_2[i].getX() - 4.5f * gameSpeed);
 
                             //runOnUiThread(new Runnable() {
                                // @Override
@@ -355,11 +356,11 @@ public class MainActivity extends Activity {
                     {
                         for(int i = 0; i < obstaclesUp.length; i++)
                         {
-                            obstaclesUp[i].setX(obstaclesUp[i].getX() - 5.5f);
-                            obstaclesDown[i].setX(obstaclesDown[i].getX() - 5.5f);
-                            obstaclesUp_2[i].setX(obstaclesUp_2[i].getX() - 5.5f);
+                            coin[i].setX(coin[i].getX() - 5.5f * gameSpeed);
 
-                            coin[i].setX(coin[i].getX() - 5.5f);
+                            obstaclesUp[i].setX(obstaclesUp[i].getX() - 5.5f * gameSpeed);
+                            obstaclesDown[i].setX(obstaclesDown[i].getX() - 5.5f * gameSpeed);
+                            obstaclesUp_2[i].setX(obstaclesUp_2[i].getX() - 5.5f * gameSpeed);
 
                             if ((figure.getX() - 5.5f) > obstaclesUp[i].getX() && figure.getX() - 11 <= obstaclesUp[i].getX()) {
                                 whichObstacleJustPassedBy = i;
